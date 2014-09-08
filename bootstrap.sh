@@ -5,7 +5,10 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/10gen.list
 
 # Update dependencies
-apt-get update
+apt-get update -y
+
+# Upgrade packages
+apt-get upgrade -y
 
 # Install cURL
 apt-get install curl -y
@@ -40,12 +43,8 @@ make install
 echo 'export PATH=$HOME/local/bin:$PATH' >> /home/vagrant/.bashrc
 echo 'export NODE_PATH=$HOME/local/lib/node_modules' >> /home/vagrant/.bashrc
 
-# Allow reloading of .bashrc
-chmod a+x /home/vagrant/.bashrc
-PS1='$ '
-
-# Make node available in current terminal
-source /home/vagrant/.bashrc
+# Clean up node.js install files
+rm -rf /home/vagrant/node-v0.10.31 /home/vagrant/node-v0.10.31.tar.gz
 
 # Install specific mongodb stable version
 apt-get install -y mongodb-org=2.6.1 mongodb-org-server=2.6.1 mongodb-org-shell=2.6.1 mongodb-org-mongos=2.6.1 mongodb-org-tools=2.6.1
@@ -56,6 +55,9 @@ echo "mongodb-10gen hold" | dpkg --set-selections
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 sudo apt-get -y install mysql-server
+
+# Setup permissions for npm
+chown -R `whoami` `npm -g bin`
 
 # Install yeoman, bower, grunt, and generator-yeogurt
 npm install -g yo generator-yeogurt
