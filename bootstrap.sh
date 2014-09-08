@@ -58,6 +58,7 @@ sudo apt-get -y install mysql-server
 
 # Setup permissions for npm
 chown -R vagrant /home/vagrant/local/bin
+chown -R vagrant /home/vagrant/local/lib
 
 # Create symbolic link for sudo user to use npm and node
 sudo ln -s /home/vagrant/local/bin/node /usr/bin/node
