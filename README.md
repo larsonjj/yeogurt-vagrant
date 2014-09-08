@@ -17,18 +17,11 @@ vagrant box add ubuntu/trusty64
 
 This will install a box that is a clean version of Ubuntu 14.04 x64
 
-## Setup configuration with Git
-All the needed configuration needed can be obtained by cloning this repository:
+## Setup configuration
+Get all the needed configuration (using cURL)
 
 ```
-git clone git@github.com:larsonjj/yeogurt-vagrant.git ./desired/folder
-```
-
-## Setup configuration without Git
-Get all the needed configuration files without git (using cURL)
-
-```
-curl -#L https://github.com/larsonjj/yeogurt-vagrant/tarball/master | tar -xzv
+curl -#L https://github.com/larsonjj/yeogurt-vagrant/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,.gitignore,LICENSE}
 ```
 
 ***Note: This will download all the files in the repository and put them within a `larsonjj-yeogurt-vagrant-{commit-hash}/` folder.***
