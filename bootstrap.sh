@@ -64,6 +64,3 @@ chown -R vagrant /home/vagrant/local/lib
 sudo ln -s /home/vagrant/local/bin/node /usr/bin/node
 sudo ln -s /home/vagrant/local/bin/npm /usr/bin/npm
 sudo ln -s /home/vagrant/local/bin/node-waf /usr/bin/node-waf
-
-# Install yeoman, bower, grunt, and generator-yeogurt
-npm install -g yo generator-yeogurt
