@@ -64,5 +64,12 @@ sudo ln -s /home/vagrant/local/bin/node /usr/bin/node
 sudo ln -s /home/vagrant/local/bin/npm /usr/bin/npm
 sudo ln -s /home/vagrant/local/bin/node-waf /usr/bin/node-waf
 
+# Allow reloading of .bashrc
+chmod a+x /home/vagrant/.bashrc
+PS1='$ '
+
+# Make node available in current terminal
+source /home/vagrant/.bashrc
+
 # Install yeoman, bower, grunt, and generator-yeogurt
 npm install -g yo generator-yeogurt
