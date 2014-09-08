@@ -21,7 +21,7 @@ This will install a box that is a clean version of Ubuntu 14.04 x64
 All the needed configuration needed can be obtained by cloning this repository:
 
 ```
-git clone git@github.com:larsonjj/yeogurt-vagrant.git
+git clone git@github.com:larsonjj/yeogurt-vagrant.git ./desired/folder
 ```
 
 # Usage
