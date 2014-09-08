@@ -1,17 +1,7 @@
 #!/usr/bin/env bash
 
-# Update apt-get to get 10gen stable packages
-apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
-echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/10gen.list
-
 # Update dependencies
 apt-get update -y
-
-# Upgrade packages
-apt-get upgrade -y
-
-# Install cURL
-apt-get install curl -y
 
 # Install Node.js
 
@@ -45,16 +35,6 @@ echo 'export NODE_PATH=$HOME/local/lib/node_modules' >> /home/vagrant/.bashrc
 
 # Clean up node.js install files
 rm -rf /home/vagrant/node-v0.10.31 /home/vagrant/node-v0.10.31.tar.gz
-
-# Install specific mongodb stable version
-apt-get install -y mongodb-org=2.6.1 mongodb-org-server=2.6.1 mongodb-org-shell=2.6.1 mongodb-org-mongos=2.6.1 mongodb-org-tools=2.6.1
-# Pin to the exact version above, so it's not auto upgraded by apt-get
-echo "mongodb-10gen hold" | dpkg --set-selections
-
-# Install MySQL server with default username and password
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
-sudo apt-get -y install mysql-server
 
 # Setup permissions for npm
 chown -R vagrant /home/vagrant/local/bin

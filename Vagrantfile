@@ -58,6 +58,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # information on available options.
 
     # Enable provisioning with shell script
-    config.vm.provision :shell, path: "bootstrap.sh"
-    config.vm.provision :shell, path: "yeogurt.sh"
+    config.vm.provision :shell, path: "provision/boostrap.sh"
+    config.vm.provision :shell, path: "provision/node.sh"
+    config.vm.provision :shell, path: "provision/mongodb.sh"
+    config.vm.provision :shell, path: "provision/mysql.sh"
+    config.vm.provision :shell, path: "provision/yeogurt.sh"
 end
