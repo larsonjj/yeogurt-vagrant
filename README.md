@@ -18,6 +18,12 @@ vagrant box add ubuntu/trusty64
 This will install a box that is a clean version of Ubuntu 14.04 x64
 
 ## Setup configuration
+Create a new project folder
+
+```
+mkdir ~/new-project && cd ~/new-project
+```
+
 Get all the needed configuration (using cURL)
 
 ```
@@ -34,7 +40,7 @@ Once you have the needed Ubuntu box and all of the configuration files located i
 vagrant up
 ```
 
-This will run all of the scripts in the `provision` folder and install all the needed dependencies:
+This will boot up the VM and run all of the scripts in the `provision` folder. This will install all the needed dependencies:
 
 - MongoDB 2.6.1
 - Ruby 2.1.2 (Not needed, but good to have)
@@ -48,3 +54,13 @@ This will run all of the scripts in the `provision` folder and install all the n
 Once the script completes, you can boot up the VM with `vagrant ssh`. Find more info on [Vagrant's site](https://docs.vagrantup.com/v2/getting-started/index.html).
 
 Congrats! You should have everything you need to start working with Yeogurt.
+
+To start a new Yeogurt project, navigate to the /vagrant folder:
+
+```
+cd /vagrant`
+```
+
+Then run the Yeogurt generator
+
+```yo yeogurt```
