@@ -45,4 +45,6 @@ This will run all of the scripts in the `provision` folder and install all the n
 
 ***Note: Installation make take a while to complete as Node is being built from source (~5-15mins)***
 
-Once the script completes, the VM should boot up and you should have everything you need to start working with Yeogurt.
+Once the script completes, you can boot up the VM with `vagrant ssh`. Find more info on [Vagrant's site](https://docs.vagrantup.com/v2/getting-started/index.html).
+
+Congrats! You should have everything you need to start working with Yeogurt.
