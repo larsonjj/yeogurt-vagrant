@@ -12,13 +12,6 @@ apt-get install curl -y
 
 # Install Node.js
 
-# Setup .bashrc and node bin location
-echo 'export PATH=$HOME/local/bin:$PATH' >> /home/vagrant/.bashrc
-echo 'export NODE_PATH=$HOME/local/lib/node_modules' >> /home/vagrant/.bashrc
-
-# Make node available in current terminal
-source /home/vagrant/.bashrc
-
 # Create folder to house node bin file once installed
 mkdir /home/vagrant/local
 
@@ -42,6 +35,17 @@ cd node-v0.10.31
 
 # Build node.js from source and install
 make install
+
+# Setup .bashrc and node bin location
+echo 'export PATH=$HOME/local/bin:$PATH' >> /home/vagrant/.bashrc
+echo 'export NODE_PATH=$HOME/local/lib/node_modules' >> /home/vagrant/.bashrc
+
+# Allow reloading of .bashrc
+chmod a+x /home/vagrant/.bashrc
+PS1='$ '
+
+# Make node available in current terminal
+source /home/vagrant/.bashrc
 
 # Install specific mongodb stable version
 apt-get install -y mongodb-org=2.6.1 mongodb-org-server=2.6.1 mongodb-org-shell=2.6.1 mongodb-org-mongos=2.6.1 mongodb-org-tools=2.6.1
