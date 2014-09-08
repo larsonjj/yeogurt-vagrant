@@ -32,4 +32,15 @@ Once you have the needed Ubuntu box and the Vagrant file located in your desired
 vagrant up
 ```
 
-Then you should have everything up and running in a new Virtual Machine with all the needed software.
+This will run the `bootstrap.sh` file and install all the needed dependencies:
+
+- MongoDB 2.6.1
+- Ruby 2.1.2 (Not needed, but good to have)
+- MySQL Server 5.5.5
+- Node.js 0.10.31
+- Yeoman, Grunt, Bower npm packages
+- [Yeogurt Generator](https://github.com/larsonjj/generator-yeogurt#bower-not-installing-dependencies-using-git)
+
+***Note: Installation make take a while to complete as Node is being built from source (~5-15mins)***
+
+Once the script completes, the VM should boot up and you should have everything you need to start working with Yeogurt.
