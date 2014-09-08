@@ -63,4 +63,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.provision :shell, path: "provision/mongodb.sh"
     config.vm.provision :shell, path: "provision/mysql.sh"
     config.vm.provision :shell, path: "provision/yeogurt.sh"
+    config.vm.provision :shell, path: "provision/permissions.sh"
 end

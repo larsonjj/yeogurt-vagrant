@@ -35,13 +35,13 @@ curl -#L https://github.com/larsonjj/yeogurt-vagrant/tarball/master | tar -xzv
 
 # Usage
 
-Once you have the needed Ubuntu box and the Vagrant file located in your desired folder, you can run:
+Once you have the needed Ubuntu box and all of the configuration files located in your desired folder, you can run:
 
 ```
 vagrant up
 ```
 
-This will run the `bootstrap.sh` file and install all the needed dependencies:
+This will run all of the scripts in the `provision` folder and install all the needed dependencies:
 
 - MongoDB 2.6.1
 - Ruby 2.1.2 (Not needed, but good to have)
