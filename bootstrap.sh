@@ -59,5 +59,10 @@ sudo apt-get -y install mysql-server
 # Setup permissions for npm
 chown -R `whoami` `npm -g bin`
 
+# Create symbolic link for sudo user to use npm and node
+sudo ln -s /home/vagrant/local/bin/node /usr/bin/node
+sudo ln -s /home/vagrant/local/bin/npm /usr/bin/npm
+sudo ln -s /home/vagrant/local/bin/node-waf /usr/bin/node-waf
+
 # Install yeoman, bower, grunt, and generator-yeogurt
 npm install -g yo generator-yeogurt
