@@ -24,7 +24,7 @@ Get all the needed configuration (using cURL)
 curl -#L https://github.com/larsonjj/yeogurt-vagrant/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,.gitignore,LICENSE}
 ```
 
-***Note: This will download all the files in the repository and put them within a `larsonjj-yeogurt-vagrant-{commit-hash}/` folder.***
+***Note: This will download all the files in the repository and put them within the current folder.***
 
 # Usage
 
