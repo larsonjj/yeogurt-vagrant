@@ -18,15 +18,18 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # config.vm.box_check_update = false
 
     # Create a forwarded port mapping which allows access to a specific port
-    # within the machine from a port on the host machine. In the example below,
-    # accessing "localhost:8080" will access port 80 on the guest machine.
+    # Node App Server
     config.vm.network "forwarded_port", guest: 9010, host: 9010
+    # Karma Unit tests
     config.vm.network "forwarded_port", guest: 9011, host: 9011
+    # LiveReload
     config.vm.network "forwarded_port", guest: 35729, host: 35729
+    # Node Debugger
+    config.vm.network "forwarded_port", guest: 5858, host: 5858
 
     # Create a private network, which allows host-only access to the machine
     # using a specific IP.
-    # config.vm.network "private_network", ip: "192.168.33.10"
+    config.vm.network "private_network", ip: "192.168.33.10"
 
     # Create a public network, which generally matched to bridged network.
     # Bridged networks make the machine appear as another physical device on
@@ -43,13 +46,18 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # argument is a set of non-required options.
     # config.vm.synced_folder "../data", "/vagrant_data"
 
+    # Use NFS for shared folders for better performance
+    # is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
+    # config.vm.synced_folder '.', '/vagrant',
+    #     :nfs => !is_windows,
+    #     :mount_options => ['actimeo=2'],
+    #     id: "shared"
+
     # Provider-specific configuration so you can fine-tune various
     # backing providers for Vagrant. These expose provider-specific options.
     # Example for VirtualBox:
     #
     config.vm.provider "virtualbox" do |vb|
-    #   # Don't boot with headless mode
-    #   vb.gui = true
         vb.memory = 1024
         vb.cpus = 2
         vb.customize ["modifyvm", :id, "--cpuexecutioncap", "90"]
