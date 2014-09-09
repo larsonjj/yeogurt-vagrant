@@ -72,10 +72,7 @@ yo yeogurt
 > IMPORTANT: By default, Vagrant shares your project directory (remember, that is the one with the `Vagrantfile` and `provision` files you downloaded), which means all the files located in `/vagrant` are actually your current project files. Read more about it on Vagrant's site regarding [Synced Folders](https://docs.vagrantup.com/v2/getting-started/synced_folders.html)
 
 # Caveats
-Yeogurt should work pretty much the same within the Vagrant VM as it would being loaded on your machine. There are a few exceptions though:
-
-1. `grunt serve`, `grunt serve:dist`, and `grunt test:watch` must be run with the `--allow-remote` option, otherwise the development server won't be able to contact your host machine
-2. Performance will be a bit slower, as it's running in a virtualized environment. So you will see a bit slower compile times and installation of other software/packages.
+Yeogurt should work pretty much the same within the Vagrant VM as it would being loaded on your machine. The only hinderence is that performance will be a bit slower, so you will see a bit slower compile times and installation of other software/packages.
 
 # Increasing performance
 You can increase performance of you Vagrant VM by opening up your Vagrantfile and editing these lines:
