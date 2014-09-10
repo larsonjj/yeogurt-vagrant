@@ -44,7 +44,6 @@ vagrant up
 This will boot up the VM and run all of the scripts in the `provision` folder. This will install all the needed dependencies:
 
 - MongoDB 2.6.1
-- Ruby 2.1.2 (Not needed, but good to have)
 - MySQL Server 5.5.5
 - Node.js 0.10.31
 - Yeoman, Grunt, Bower npm packages
