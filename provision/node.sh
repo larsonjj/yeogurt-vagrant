@@ -13,11 +13,8 @@ git config --global url."https://".insteadOf git://
 
 # Install Node.js
 
-# Create folder to house node bin file once installed
-mkdir /home/vagrant/local
-
-# Install build tools, git, and wget
-apt-get install wget build-essential git -y
+# Install git
+apt-get install git -y
 
 # Configure git to use HTTPS instead of git port (Fixes issues with corporate networks)
 git config --global url."https://".insteadOf git://
