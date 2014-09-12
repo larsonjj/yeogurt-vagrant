@@ -48,9 +48,7 @@ This will boot up the VM and run all of the scripts in the `provision` folder. T
 - Node.js 0.10.31
 - Yeoman, Grunt, Bower npm packages
 - [Yeogurt Generator](https://github.com/larsonjj/generator-yeogurt#bower-not-installing-dependencies-using-git)
-
-***Note: Installation make take a while to complete as Node is being built from source (~5-15mins)***
-
+- 
 Once the script completes, you can boot up the VM with `vagrant ssh`. Find more info on [Vagrant's site](https://docs.vagrantup.com/v2/getting-started/index.html).
 
 Congrats! You should have everything you need to start working with Yeogurt.
