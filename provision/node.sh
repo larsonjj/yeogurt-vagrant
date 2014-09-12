@@ -11,8 +11,6 @@ apt-get install build-essential libssl-dev git -y
 # Configure git to use HTTPS instead of git port (Fixes issues with corporate networks)
 git config --global url."https://".insteadOf git://
 
-# Install Node.js
-
 # Install git
 apt-get install git -y
 
